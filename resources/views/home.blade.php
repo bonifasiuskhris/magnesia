@@ -1,426 +1,497 @@
 @extends('layout.master')
 
+{{-- custom head section --}}
 @section('content_head')
 
 @endsection
 
+{{-- custom footer js section --}}
 @section('content_footer')
+
+
+<script>
+    $(document).ready(function() {
+      // init controller
+      var controller = new ScrollMagic.Controller();
+
+      // build scenes
+      new ScrollMagic.Scene({triggerElement: '.promo-zoom', triggerHook: 0, duration: '100%'})
+            .setTween('.house-left', {left: '-30%', scale: 1.25, ease: Linear.easeNone})
+            .addTo(controller);
+
+      new ScrollMagic.Scene({triggerElement: '.promo-zoom', triggerHook: 0, duration: '100%'})
+            .setTween('.house-right', {right: '-10%', bottom: '-20%', scale: 1.35, ease: Linear.easeNone})
+            .addTo(controller);
+
+      new ScrollMagic.Scene({triggerElement: '.promo-zoom', triggerHook: 0, duration: '100%'})
+            .setTween('.mountains', {top: '-60%', scale: 2.2, ease: Linear.easeNone})
+            .addTo(controller);
+
+      new ScrollMagic.Scene({triggerElement: '.promo-zoom', triggerHook: 0, duration: '100%'})
+            .setTween('.promo-zoom-titles', {top: '0%', opacity: 0, ease: Linear.easeNone})
+            .addTo(controller);
+
+      new ScrollMagic.Scene({triggerElement: '.promo-zoom', triggerHook: 0, duration: '100%'})
+            .setTween('.navbar-nav', {opacity: 0, ease: Linear.easeNone})
+            .addTo(controller);
+
+      new ScrollMagic.Scene({triggerElement: '.step-opacity', triggerHook: 0, duration: '15%'})
+            .setTween('.mountains, .house-right, .house-left', {opacity: 0, ease: Linear.easeNone})
+            .addTo(controller);
+
+      new ScrollMagic.Scene({triggerElement: '.step-visibility', triggerHook: 0, duration: '10%'})
+            .setTween('.mountains, .house-right, .house-left, .navbar-nav, .promo-zoom-titles', {visibility: 'hidden', ease: Linear.easeNone})
+            .addTo(controller);
+
+      new ScrollMagic.Scene({triggerElement: '.step-logo', triggerHook: 0, duration: '1%'})
+            .setTween('.about', {opacity: '1', top: '0', ease: Linear.easeNone})
+            .addTo(controller);
+
+    });
+  </script>
+
 
 @endsection
 
+{{-- content section --}}
 @section('content')
+<div class="animsition">
+    <div class="wrapper">
+      <header id="header" class="header header-fixed">
+        <div class="container-fluid clearfix">
+          <div class="brand">
+            <a href="home-flash.html">
+              <div class="brand-name">LW</div>
+              <div class="brand-text">Crafting Digital<br /> Studio</div>
+            </a>
+          </div>
 
- 	
-	<!-- Primary Page Layout
-	================================================== -->
+          <button class="nav-toggle-btn a-nav-toggle">
+            <span class="nav-toggle">
+              <span class="stick stick-1"></span>
+              <span class="stick stick-2"></span>
+              <span class="stick stick-3"></span>
+            </span>
+          </button>
 
-    <div class="section full-height back-dark" id="home">
-		
-        <div id="rev_slider_626_1_wrapper" class="rev_slider_wrapper fullscreen-container fade-elements" data-alias="focus-parallax" style="background-color:transparent;padding:0px;">
-            <!-- START REVOLUTION SLIDER 5.3.0 fullscreen mode -->
-            <div id="rev_slider_626_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.3.0">
-                <ul>
-                    <!-- SLIDE  -->
-                    <li data-index="rs-1895" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Focus" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                        <!-- MAIN IMAGE -->
-                        <img src="{{asset('assets/images/dummy.png')}}" style='background-color:#212121' alt="" data-lazyload="{{asset('assets/images/transparent.png')}}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-                        <!-- LAYERS -->
+          <nav class="navbar-nav d-none d-md-block">
+            <ul>
+              <li class="active dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="dropdownMenuStudio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-text="studio">studio</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuStudio">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <ul>
+                        <li><a href="about-us.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="About Us">About Us</a></li>
+                        <li><a href="about-me.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="About Me">About Me</a></li>
+                        <li><a href="our-team.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Our team">Our team</a></li>
+                        <li><a href="career.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Career">Career</a></li>
+                        <li><a href="career-detail.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Career Detail">Career Detail</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-6">
+                      <ul>
+                        <li><a href="how-its-work.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="How its work">How its work</a></li>
+                        <li><a href="service.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Service">Service</a></li>
+                        <li><a href="coming-soon.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Coming soon">Coming soon</a></li>
+                        <li><a href="404.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Page 404">Page 404</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="dropdownMenuWork" data-text="works" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">works</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuWork">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="dropdown-menu-title">Works</div>
+                      <ul>
+                        <li><a href="work-grid.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Grid">Grid</a></li>
+                        <li class="active"><a href="work-masonry.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Masonry">Masonry</a></li>
+                        <li><a href="work-metro.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Metro">Metro</a></li>
+                        <li><a href="work-listing.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Listing">Listing</a></li>
+                        <li><a href="work-carousel.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Carousel">Carousel</a></li>
+                        <li><a href="work-parallax.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Parallax">Parallax</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="dropdown-menu-title">single project</div>
+                      <ul>
+                        <li><a href="single-project-web-design.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Web Design">Web Design</a></li>
+                        <li><a href="single-project-photography.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Photography">Photography</a></li>
+                        <li><a href="single-project-branding.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Branding">Branding</a></li>
+                        <li><a href="single-project-mobile-app.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Mobile App">Mobile App</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="dropdownMenuNews" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-text="news">news</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuNews">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="dropdown-menu-title">News</div>
+                      <ul>
+                        <li><a href="news-grid.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Grid">Grid</a></li>
+                        <li><a href="news-masonry.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Masonry">Masonry</a></li>
+                        <li><a href="news-with-sidebar.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Parallax">Parallax</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="dropdown-menu-title">single news</div>
+                      <ul>
+                        <li><a href="single-post-no-sidebar.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="No sidebar">No sidebar</a></li>
+                        <li><a href="single-post-with-sidebar.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="With sidebar">With sidebar</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><a href="contact.html" class="nav-link animsition-link" data-animsition-out-class="fade-out" data-text="contact">contact</a></li>
+            </ul>
+          </nav>
+        </div>
 
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-2" id="slide-1895-layer-7" data-x="['left','left','left','left']" data-hoffset="['763','708','480','291']" data-y="['top','top','top','top']" data-voffset="['634','620','668','395']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="x:-200px;rZ:-45deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="950" data-responsive_offset="on" style="z-index: 5;">
-                        <div class="rs-looped rs-wave" data-speed="6" data-angle="0" data-radius="2px" data-origin="50% 50%"><img src="{{asset('assets/images/dummy.png')}}" alt="" width="600" height="250" data-ww="['600px','600px','450px','300px']" data-hh="['250px','250px','188px','125px']" data-lazyload="{{asset('assets/images/relative_pencil3.png')}}" data-no-retina> </div>
-                        </div>
+        <div class="hide-menu a-nav-toggle"></div>
 
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-2" id="slide-1895-layer-9" data-x="['left','left','left','left']" data-hoffset="['-6','-26','-26','-56']" data-y="['top','top','top','top']" data-voffset="['389','389','389','338']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="x:200px;rZ:45deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="800" data-responsive_offset="on" style="z-index: 6;">
-                            <div class="rs-looped rs-wave" data-speed="7" data-angle="0" data-radius="3px" data-origin="50% 50%"><img src="assets/images/dummy.png" alt="" width="400" height="500" data-ww="['400px','400px','300','200px']" data-hh="['500px','500px','375','250px']" data-lazyload="assets/images/relative_glasses.png" data-no-retina> </div>
-                        </div>
+        <div class="menu">
+          <div class="menu-lang">
+            <a href="#" class="menu-lang-item active">Eng</a>
+            <a href="#" class="menu-lang-item">fra</a>
+            <a href="#" class="menu-lang-item">ger</a>
+          </div>
 
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-1" id="slide-1895-layer-3" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['20','20','20','20']" data-width="['480','480','400','250']" data-height="['560','460','460','400']" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="x:0;y:0;z:0;rX:0;rY:0;rZ:0;sX:0.8;sY:0.8;skX:0;skY:0;opacity:0;s:1000;e:Back.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="500" data-responsive_offset="on" style="z-index: 7;background-color:rgba(0, 0, 0, 0);border-color:rgba(255, 255, 255, 0.35);border-style:solid;border-width:30px;filter:blur(5px);-webkit-filter:blur(5px);-moz-filter:blur(5px);-o-filter:blur(5px);-ms-filter:blur(5px);"> </div>
+          <div class="menu-main" id="accordion">
+            <ul>
+              <li class="active"><a data-text="Home" data-toggle="collapse" href="#menuHome" role="button" aria-expanded="true" aria-controls="menuHome">Home</a>
+                <div class="collapse show" id="menuHome" data-parent="#accordion">
+                  <ul>
+                    <li><a href="home-flash.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Flash">Flash</a></li>
+                    <li><a href="home-horizontal.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Parallax Horizontal">Parallax Horizontal</a></li>
+                    <li><a href="home-minimal.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Minimal">Minimal</a></li>
+                    <li class="active"><a href="home-zoom.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Zoom Parallax Image">Zoom Parallax Image</a></li>
+                    <li><a href="home-3d.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="3D Parallax">3D Parallax</a></li>
+                    <li><a href="home-video.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Video Background">Video Background</a></li>
+                    <li><a href="home-piling.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Parallax Piling">Parallax Piling</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a data-text="Works" data-toggle="collapse" href="#menuWorks" role="button" aria-expanded="false" aria-controls="menuWorks">Works</a>
+                <div class="collapse" id="menuWorks" data-parent="#accordion">
+                  <ul>
+                    <li><a href="work-grid.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Grid">Grid</a></li>
+                    <li><a href="work-masonry.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Masonry">Masonry</a></li>
+                    <li><a href="work-metro.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Metro">Metro</a></li>
+                    <li><a href="work-listing.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Listing">Listing</a></li>
+                    <li><a href="work-carousel.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Carousel">Carousel</a></li>
+                    <li><a href="work-parallax.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Parallax">Parallax</a></li>
+                    <li><a href="single-project-branding.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Single Project Branding">Single Project Branding</a></li>
+                    <li><a href="single-project-photography.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Single Project Photography">Single Project Photography</a></li>
+                    <li><a href="single-project-web-design.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Single Project Web Design">Single Project Web Design</a></li>
+                    <li><a href="single-project-mobile-app.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Single Project Mobile App">Single Project Mobile App</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a data-text="News" data-toggle="collapse" href="#menuNews" role="button" aria-expanded="false" aria-controls="menuNews">News</a>
+                <div class="collapse" id="menuNews" data-parent="#accordion">
+                  <ul>
+                    <li><a href="news-grid.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Grid">Grid</a></li>
+                    <li><a href="news-masonry.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Masonry">Masonry</a></li>
+                    <li><a href="news-with-sidebar.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="News with sidebar">News with sidebar</a></li>
+                    <li><a href="single-post-no-sidebar.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Single Post No Sidebar">Single Post No Sidebar</a></li>
+                    <li><a href="single-post-with-sidebar.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Single Post With Sidebar">Single Post With Sidebar</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a data-text="Studio" data-toggle="collapse" href="#menuStudio" role="button" aria-expanded="false" aria-controls="menuStudio">Studio</a>
+                <div class="collapse" id="menuStudio" data-parent="#accordion">
+                  <ul>
+                    <li><a href="about-us.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="About Us">About Us</a></li>
+                    <li><a href="about-me.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="About Me">About Me</a></li>
+                    <li><a href="our-team.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Our team">Our team</a></li>
+                    <li><a href="career.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Career">Career</a></li>
+                    <li><a href="career-detail.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Career Detail">Career Detail</a></li>
+                    <li><a href="how-its-work.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="How its work">How its work</a></li>
+                    <li><a href="service.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Service">Service</a></li>
+                    <li><a href="coming-soon.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Coming soon">Coming soon</a></li>
+                    <li><a href="404.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Page 404">Page 404</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="contact.html" class="animsition-link" data-animsition-out-class="fade-out" data-text="Contact">Contact</a></li>
+            </ul>
+          </div>
 
-                        <!-- LAYER NR. 4 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-3" id="slide-1895-layer-1" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-200','-180','-90','-90']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:50px;opacity:0;s:800;e:Back.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="650" data-responsive_offset="on" style="z-index: 8;"><img src="assets/images/dummy.png" alt="" width="600" height="1000" data-ww="['600px','500','500px','400']" data-hh="['1000px','833','833px','667']" data-lazyload="assets/images/guy_transparent.png" data-no-retina> </div>
-
-                        <!-- LAYER NR. 5 -->
-                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-4" id="slide-1895-layer-2" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['20','25','25','25']" data-width="['780','700','640','400']" data-height="['800','680','680','600']" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="x:0;y:0;z:0;rX:0;rY:0;rZ:0;sX:0.8;sY:0.8;skX:0;skY:0;opacity:0;s:1000;e:Back.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1100" data-responsive_offset="on" style="z-index: 9;background-color:rgba(0, 0, 0, 0);border-color:rgba(255, 255, 255, 0.35);border-style:solid;border-width:30px;"> </div>
-
-
-                        <!-- LAYER NR. 6 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-7" id="slide-1895-layer-5" data-x="['left','left','left','left']" data-hoffset="['832','707','567','300']" data-y="['top','top','top','top']" data-voffset="['-22','33','107','5']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:300px;rZ:35deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1250" data-responsive_offset="on" style="z-index: 11;">
-                            <div class="rs-looped rs-wave" data-speed="5" data-angle="0" data-radius="4px" data-origin="50% 50%"><img src="assets/images/dummy.png" alt="" width="684" height="404" data-ww="['684px','684px','450px','300px']" data-hh="['404px','404px','266px','177px']" data-lazyload="assets/images/relative_pencil1.png" data-no-retina> </div>
-                        </div>
-
-                        <!-- LAYER NR. 7 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-3" id="slide-1895-layer-6" data-x="['left','left','left','left']" data-hoffset="['1001','831','658','379']" data-y="['top','top','top','top']" data-voffset="['357','379','360','220']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:300px;rZ:90deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="650" data-responsive_offset="on" style="z-index: 12;">
-                            <div class="rs-looped rs-wave" data-speed="3" data-angle="0" data-radius="3px" data-origin="50% 50%"><img src="assets/images/dummy.png" alt="" width="250" height="300" data-ww="['250px','250px','180px','120px']" data-hh="['300px','300px','216px','144px']" data-lazyload="assets/images/relative_eraser2.png" data-no-retina> </div>
-                        </div>
-
-                        <!-- LAYER NR. 8 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-3" id="slide-1895-layer-8" data-x="['left','left','left','left']" data-hoffset="['1','-6','-11','-1']" data-y="['top','top','top','top']" data-voffset="['311','276','321','283']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:300px;rZ:-45deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="650" data-responsive_offset="on" style="z-index: 13;"><img src="assets/images/dummy.png" alt="" width="150" height="170" data-ww="['150px','150px','120px','80px']" data-hh="['170px','170px','136px','91px']" data-lazyload="assets/images/relative_pencil2.png" data-no-retina> </div>
-
-
-                        <!-- LAYER NR. 9 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-9" id="slide-1895-layer-11" data-x="['left','left','left','left']" data-hoffset="['-219','-236','-99','-86']" data-y="['top','top','top','top']" data-voffset="['494','414','630','501']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:300px;rZ:-45deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1450" data-responsive_offset="on" style="z-index: 15;">
-                            <div class="rs-looped rs-wave" data-speed="6" data-angle="0" data-radius="7px" data-origin="50% 50%"><img src="assets/images/dummy.png" alt="" width="400" height="500" data-ww="['400px','400px','300px','200px']" data-hh="['500px','500px','375px','250px']" data-lazyload="assets/images/relative_triangle.png" data-no-retina> </div>
-                        </div>
-
-                        <!-- LAYER NR. 10 -->
-                        <div class="tp-caption tp-shape tp-shapewrapper   tp-gradientbg" id="slide-1895-layer-15" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="nowrap" data-transform_idle="o:0.75;" data-transform_in="opacity:0;s:300;e:Power2.easeInOut;" data-transform_out="opacity:0;s:300;" data-start="0" data-basealign="slide" data-responsive_offset="off" data-responsive="off" style="z-index: 16;background-color:rgba(0, 0, 0, 0);border-color:rgba(0, 0, 0, 0);"> </div>
-
-                        <!-- LAYER NR. 11 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-7" id="slide-1895-layer-12" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['90','90','90','90']" data-fontsize="['120','100','100','60']" data-lineheight="['100','80','80','50']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:50px;opacity:0;s:1000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1550" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 17; white-space: nowrap; font-size: 120px; line-height: 100px; font-weight: 800; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;text-align:center;letter-spacing:-7px;">FOCUS
-                            <br/> IS RELATIVE </div>
-
-                        <!-- LAYER NR. 12 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-6" id="slide-1895-layer-13" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['257','222','222','181']" data-fontsize="['40','30','30','30']" data-lineheight="['35','25','25','25']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:50px;opacity:0;s:1000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1650" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 18; white-space: nowrap; font-size: 40px; line-height: 35px; font-weight: 800; color: rgba(109,194,52,.8); font-family:Open Sans;text-align:center;letter-spacing:-2px;">CHANGE YOUR
-                            <br/> PERSPECTIVE </div>
-
-                        <!-- LAYER NR. 13 -->
-                        <div class="tp-caption   tp-resizeme tp-svg-layer rs-parallaxlevel-5" id="slide-1895-layer-14" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['340','299','299','249']" data-width="100" data-height="100" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_hover="o:1;sX:1.4;sY:1.4;rX:0;rY:0;rZ:0;z:0;s:200;e:Power1.easeInOut;" data-style_hover="c:rgba(255, 255, 255, 1.00);" data-transform_in="y:50px;opacity:0;s:1000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1750" data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-1896","delay":""}]' data-svg_src="assets/images/ic_expand_more_24px.svg" data-svg_idle="sc:transparent;sw:0;sda:0;sdo:0;" data-svg_hover="sc:transparent;sw:0;sda:0;sdo:0;" data-responsive_offset="on" style="z-index: 19; min-width: 100px; max-width: 100px; max-width: 100px; max-width: 100px; color: rgba(255, 255, 255, 1.00);cursor:pointer;">
-                            <div class="rs-looped rs-slideloop" data-easing="Power1.easeInOut" data-speed="1" data-xs="0" data-xe="0" data-ys="-5" data-ye="5"> </div>
-                        </div>
-                    </li>
-                    <!-- SLIDE  -->
-                    <li data-index="rs-1896" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Perspective" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                        <!-- MAIN IMAGE -->
-                        <img src="assets/images/dummy.png" style='background-color:#cccccc' alt="" data-lazyload="assets/images/transparent.png" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-                        <!-- LAYERS -->
-
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-2" id="slide-1896-layer-7" data-x="['left','left','left','left']" data-hoffset="['763','708','480','291']" data-y="['top','top','top','top']" data-voffset="['634','620','668','395']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="x:-200px;rZ:-45deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="950" data-responsive_offset="on" style="z-index: 5;">
-                            <div class="rs-looped rs-wave" data-speed="6" data-angle="0" data-radius="2px" data-origin="50% 50%"><img src="assets/images/dummy.png" alt="" width="600" height="250" data-ww="['600px','600px','450px','300px']" data-hh="['250px','250px','188px','125px']" data-lazyload="assets/images/relative_pencil3.png" data-no-retina> </div>
-                        </div>
-
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-2" id="slide-1896-layer-9" data-x="['left','left','left','left']" data-hoffset="['-6','-26','-26','-56']" data-y="['top','top','top','top']" data-voffset="['389','389','389','338']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="x:200px;rZ:45deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="800" data-responsive_offset="on" style="z-index: 6;">
-                            <div class="rs-looped rs-wave" data-speed="7" data-angle="0" data-radius="3px" data-origin="50% 50%"><img src="assets/images/dummy.png" alt="" width="400" height="500" data-ww="['400px','400px','300','200px']" data-hh="['500px','500px','375','250px']" data-lazyload="assets/images/relative_glasses.png" data-no-retina> </div>
-                        </div>
-
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-1" id="slide-1896-layer-3" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['20','20','20','20']" data-width="['480','480','400','250']" data-height="['560','460','460','400']" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="x:0;y:0;z:0;rX:0;rY:0;rZ:0;sX:0.8;sY:0.8;skX:0;skY:0;opacity:0;s:1000;e:Back.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="500" data-responsive_offset="on" style="z-index: 7;background-color:rgba(0, 0, 0, 0);border-color:rgba(255, 255, 255, 0.35);border-style:solid;border-width:30px;filter:blur(5px);-webkit-filter:blur(5px);-moz-filter:blur(5px);-o-filter:blur(5px);-ms-filter:blur(5px);"> </div>
-
-                        <!-- LAYER NR. 4 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-3" id="slide-1896-layer-1" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-200','-140','-30','-10']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:50px;opacity:0;s:800;e:Back.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="650" data-responsive_offset="on" style="z-index: 8;"><img src="assets/images/dummy.png" alt="" width="1000" height="1000" data-ww="['1000','800','700px','600px']" data-hh="['1000','800','700px','600px']" data-lazyload="assets/images/girl_transparent.png" data-no-retina> </div>
-
-                        <!-- LAYER NR. 5 -->
-                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-4" id="slide-1896-layer-2" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['20','25','25','25']" data-width="['780','700','640','400']" data-height="['800','680','680','600']" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="x:0;y:0;z:0;rX:0;rY:0;rZ:0;sX:0.8;sY:0.8;skX:0;skY:0;opacity:0;s:1000;e:Back.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1100" data-responsive_offset="on" style="z-index: 9;background-color:rgba(0, 0, 0, 0);border-color:rgba(255, 255, 255, 0.35);border-style:solid;border-width:30px;"> </div>
-
-                        <!-- LAYER NR. 6 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-8" id="slide-1896-layer-4" data-x="['left','left','left','left']" data-hoffset="['543','432','302','182']" data-y="['top','top','top','top']" data-voffset="['31','37','174','136']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:300px;rZ:45deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="500" data-responsive_offset="on" style="z-index: 10;">
-                            <div class="rs-looped rs-wave" data-speed="5" data-angle="0" data-radius="6px" data-origin="50% 50%"><img src="assets/images/dummy.png" alt="" width="400" height="400" data-ww="['400px','400px','300px','200px']" data-hh="['400px','400px','300px','200px']" data-lazyload="assets/images/relative_ball_grey.png" data-no-retina> </div>
-                        </div>
-
-                        <!-- LAYER NR. 7 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-7" id="slide-1896-layer-5" data-x="['left','left','left','left']" data-hoffset="['832','707','567','300']" data-y="['top','top','top','top']" data-voffset="['-22','33','107','5']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:300px;rZ:35deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1250" data-responsive_offset="on" style="z-index: 11;">
-                            <div class="rs-looped rs-wave" data-speed="5" data-angle="0" data-radius="4px" data-origin="50% 50%"><img src="assets/images/dummy.png" alt="" width="684" height="404" data-ww="['684px','684px','450px','300px']" data-hh="['404px','404px','266px','177px']" data-lazyload="assets/images/relative_pencil1.png" data-no-retina> </div>
-                        </div>
-
-                        <!-- LAYER NR. 8 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-3" id="slide-1896-layer-6" data-x="['left','left','left','left']" data-hoffset="['1001','831','658','379']" data-y="['top','top','top','top']" data-voffset="['357','379','360','220']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:300px;rZ:90deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="650" data-responsive_offset="on" style="z-index: 12;">
-                            <div class="rs-looped rs-wave" data-speed="3" data-angle="0" data-radius="3px" data-origin="50% 50%"><img src="assets/images/dummy.png" alt="" width="250" height="300" data-ww="['250px','250px','180px','120px']" data-hh="['300px','300px','216px','144px']" data-lazyload="assets/images/relative_eraser2.png" data-no-retina> </div>
-                        </div>
-
-                        <!-- LAYER NR. 9 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-3" id="slide-1896-layer-8" data-x="['left','left','left','left']" data-hoffset="['1','-6','-11','-1']" data-y="['top','top','top','top']" data-voffset="['311','276','321','283']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:300px;rZ:-45deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="650" data-responsive_offset="on" style="z-index: 13;"><img src="assets/images/dummy.png" alt="" width="150" height="170" data-ww="['150px','150px','120px','80px']" data-hh="['170px','170px','136px','91px']" data-lazyload="assets/images/relative_pencil2.png" data-no-retina> </div>
+          <div class="menu-footer">
+              <ul class="social social-rounded">
+                <li><a href="#"><i class="socicon-twitter"></i></a></li>
+                <li><a href="#"><i class="socicon-facebook"></i></a></li>
+                <li><a href="#"><i class="socicon-googleplus"></i></a></li>
+              </ul>
+              <div class="menu-copyright">&copy; 2019 <strong>LEWIS</strong>. All Rights Reserved.<br /> design by <strong>Logancee</strong></div>
+          </div>
+        </div>
+      </header>
 
 
-                        <!-- LAYER NR. 10 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-9" id="slide-1896-layer-11" data-x="['left','left','left','left']" data-hoffset="['-219','-236','-99','-86']" data-y="['top','top','top','top']" data-voffset="['494','414','630','501']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:300px;rZ:-45deg;opacity:0;s:2000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1450" data-responsive_offset="on" style="z-index: 15;">
-                            <div class="rs-looped rs-wave" data-speed="6" data-angle="0" data-radius="7px" data-origin="50% 50%"><img src="assets/images/dummy.png" alt="" width="400" height="500" data-ww="['400px','400px','300px','200px']" data-hh="['500px','500px','375px','250px']" data-lazyload="assets/images/relative_triangle.png" data-no-retina> </div>
-                        </div>
+      <div class="promo-zoom full-height">
+        <div class="pin-scene">
+          <div class="mountains"></div>
+          <div class="house-left"></div>
+          <div class="house-right"></div>
+          <div class="step-opacity"></div>
+          <div class="promo-zoom-titles">
+            <div class="top-title wow fadeInUp" data-wow-delay=".2s">lewis studio</div>
+            <h1 class="font-custom text-texture wow fadeInUp" data-wow-delay=".4s">think forward</h1>
+            <div class="row justify-content-md-center wow fadeInUp" data-wow-delay=".6s">
+              <div class="col col-lg-4"><div class="slogan">Design to attract, convert and delight your customer.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-                        <!-- LAYER NR. 11 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-7" id="slide-1896-layer-12" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['90','90','90','90']" data-fontsize="['120','100','100','60']" data-lineheight="['100','80','80','50']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:50px;opacity:0;s:1000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1550" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 16; white-space: nowrap; font-size: 120px; line-height: 100px; font-weight: 800; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;text-align:center;letter-spacing:-7px;">OHHH
-                            <br/> YEAH! </div>
+      <div class="promo-about full-height step-visibility step-logo">
+        <div class="section about">
+          <div class="container">
+            <div class="about-logo rounded-logo">
+              <svg viewBox="0 0 200 200">
+                <path id="textPath" d="M 85,0 A 85,85 0 0 1 -85,0 A 85,85 0 0 1 85,0" transform="translate(100,100)" fill="none" stroke-width="0"/>
+                <g font-size="20px">
+                  <text text-anchor="start">
+                    <textPath xlink:href="#textPath" startOffset="0%">&bull; &nbsp;  lewis  portfolio &nbsp; &bull; &nbsp; digital  studio</textPath>
+                  </text>
+                </g>
+              </svg>
+              <div class="logo">LW</div>
+            </div>
+            <h2 class="about-title">We know that good design meant good business.</h2>
+            <div class="about-descr text-grey">
+              Our mission help build brands and grow businesses with
+              <div class="visible-lg"></div>
+              digital experiences and creative content
+            </div>
+          </div>
+        </div>
+      </div>
 
-                        <!-- LAYER NR. 12 -->
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-6" id="slide-1896-layer-13" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['257','222','222','181']" data-fontsize="['40','30','30','30']" data-lineheight="['35','25','25','25']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:50px;opacity:0;s:1000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1650" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 17; white-space: nowrap; font-size: 40px; line-height: 35px; font-weight: 800; color: rgba(109,194,52,.94); font-family:Open Sans;text-align:center;letter-spacing:-2px;">LOVE THIS
-                            <br/>TEMPLATE? </div>
 
-                        <!-- LAYER NR. 13 -->
-                        <div class="tp-caption   tp-resizeme tp-svg-layer rs-parallaxlevel-5" id="slide-1896-layer-14" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['340','299','299','249']" data-width="100" data-height="100" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_hover="o:1;sX:1.4;sY:1.4;rX:0;rY:0;rZ:0;z:0;s:200;e:Power1.easeInOut;" data-style_hover="c:rgba(255, 255, 255, 1.00);" data-transform_in="y:50px;opacity:0;s:1000;e:Power4.easeOut;" data-transform_out="auto:auto;s:700;e:Power2.easeInOut;" data-start="1750" data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-1897","delay":""}]' data-svg_src="assets/images/ic_expand_more_24px.svg" data-svg_idle="sc:transparent;sw:0;sda:0;sdo:0;" data-svg_hover="sc:transparent;sw:0;sda:0;sdo:0;" data-responsive_offset="on" style="z-index: 18; min-width: 100px; max-width: 100px; max-width: 100px; max-width: 100px; color: rgba(255, 255, 255, 1.00);cursor:pointer;">
-                            <div class="rs-looped rs-slideloop" data-easing="Power1.easeInOut" data-speed="1" data-xs="0" data-xe="0" data-ys="-5" data-ye="5"> </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+      <div class="section-item services wow fadeInUp" data-wow-offset="450">
+        <div class="container">
+          <h3 class="section-item-title">Our Service</h3>
+          <div class="services-descr text-grey">When unknow printer took a gallery of type and scrambled it to make<br /> a type speciment book.</div>
+          <div class="row">
+            <div class="col-md-4">
+              <a href="service.html" class="service-item wow fadeInUp" data-wow-offset="450">
+                <div class="services-letter letter-g font-custom">
+                  <div class="text-texture">G</div>
+                  <div class="mask wow slideInLeft" data-wow-delay=".2s" data-wow-duration="2.5s" data-wow-offset="450"></div>
+                </div>
+                <div class="service-item-title">Graphic &amp; Branding</div>
+                <div class="service-item-descr text-grey">We build and activate brands throung cultural insight, strategic vision, and the power of emotion..</div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="service.html" class="service-item wow fadeInUp" data-wow-offset="450">
+                <div class="services-letter letter-w font-custom">
+                  <div class="text-texture">W</div>
+                  <div class="mask wow slideInLeft" data-wow-delay=".4s" data-wow-duration="2.5s" data-wow-offset="450"></div>
+                </div>
+                <div class="service-item-title">Web Design</div>
+                <div class="service-item-descr text-grey">Reach out your clients better through website & mobile app. Boots converastion rate for your business faster</div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="service.html" class="service-item wow fadeInUp" data-wow-offset="450">
+                <div class="services-letter letter-g font-custom">
+                  <div class="text-texture">A</div>
+                  <div class="mask wow slideInLeft" data-wow-delay=".8s" data-wow-duration="2.5s" data-wow-offset="450"></div>
+                </div>
+                <div class="service-item-title">Animation</div>
+                <div class="service-item-descr text-grey">Impressive and communicate with your clients better throung animation & motion video</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-item projects wow fadeInUp" data-wow-offset="150">
+        <div class="container">
+          <h3 class="section-item-title">featued projects</h3>
+          <div class="carousel-container wow fadeIn a-play" data-wow-offset="450" data-wow-duration="0.2s">
+            <div class="a-project-carousel owl-carousel owl-theme">
+              <div class="project-carousel-item">
+                <div class="project-carousel-photo" style="background-image: url(img/pic1.jpg);"></div>
+                <div class="project-carousel-detail">
+                  <div class="project-carousel-category">Brnading</div>
+                  <div class="project-carousel-title wow fadeInDown">Winery<br /> Bottle</div>
+                </div>
+                <div class="project-carousel-more"><a class="btn btn-danger btn-sm" href="single-project-branding.html">see Project <i class="icon ion-ios-arrow-right"></i></a></div>
+              </div>
+              <div class="project-carousel-item">
+                <div class="project-carousel-photo" style="background-image: url(img/pic2.jpg);"></div>
+                <div class="project-carousel-detail">
+                  <div class="project-carousel-category">Website</div>
+                  <div class="project-carousel-title wow fadeInDown">Scaborn<br /> Travel Agency</div>
+                </div>
+                <div class="project-carousel-more"><a class="btn btn-danger btn-sm" href="single-project-web-design.html">see Project <i class="icon ion-ios-arrow-right"></i></a></div>
+              </div>
+              <div class="project-carousel-item">
+                <div class="project-carousel-photo" style="background-image: url(img/pic3.jpg);"></div>
+                <div class="project-carousel-detail">
+                  <div class="project-carousel-category">Website</div>
+                  <div class="project-carousel-title wow fadeInDown">Unero<br /> Furniture</div>
+                </div>
+                <div class="project-carousel-more"><a class="btn btn-danger btn-sm" href="single-project-web-design.html">see Project <i class="icon ion-ios-arrow-right"></i></a></div>
+              </div>
+            </div>
+            <div class="mask wow slideInLeft" data-wow-offset="450" data-wow-duration="1.5s"></div>
+          </div>
+
+          <div class="more-total"><a href="work-grid.html">see all projects</a></div>
+        </div>
+      </div>
+
+
+      <div class="section text-center clients">
+        <div class="container">
+            <h3 class="section-item-title">WE love our clients</h3>
+            <div class="reviews-carousel-container wow fadeIn" data-wow-offset="450" data-wow-duration="1.5s">
+              <div class="a-reviews-carousel owl-carousel owl-theme">
+              <div class="reviews-carousel-item">
+                <div class="inside">
+                  <div class="reviews-carousel-text">"A designer knows he has achieved perfection not when there is nothing left to add, but when there is  nothing left to take away."</div>
+                  <div class="reviews-carousel-author"><strong>Paolo Dybala</strong> <span class="text-grey-light">at</span> Apple Inc</div>
+                </div>
+              </div>
+              <div class="reviews-carousel-item">
+                <div class="inside">
+                  <div class="reviews-carousel-text">"A designer knows he has achieved perfection not when there is nothing left to add, but when there is  nothing left to take away."</div>
+                  <div class="reviews-carousel-author"><strong>Paolo Dybala</strong> <span class="text-grey-light">at</span> Apple Inc</div>
+                </div>
+              </div>
+              <div class="reviews-carousel-item">
+                <div class="inside">
+                  <div class="reviews-carousel-text">"A designer knows he has achieved perfection not when there is nothing left to add."</div>
+                  <div class="reviews-carousel-author"><strong>Paolo Dybala</strong> <span class="text-grey-light">at</span> Apple Inc</div>
+                </div>
+              </div>
+              <div class="reviews-carousel-item">
+                <div class="inside">
+                  <div class="reviews-carousel-text">"A designer knows he has achieved perfection not when there is nothing left to add, but when there is  nothing left to take away. A designer knows he has achieved perfection not when there is nothing left to add, but when there is  nothing left to take away."</div>
+                  <div class="reviews-carousel-author"><strong>Paolo Dybala</strong> <span class="text-grey-light">at</span> Apple Inc</div>
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <div class="partner-list row align-items-center">
+              <div class="col partner-item wow fadeIn" data-wow-delay=".1s" data-wow-offset="100"><a href="#"><img src="img/pic4.jpg" alt="" width="132" /></a></div>
+              <div class="col partner-item wow fadeIn" data-wow-delay=".2s" data-wow-offset="100"><a href="#"><img src="img/pic5.jpg" alt="" width="116" /></a></div>
+              <div class="col partner-item wow fadeIn" data-wow-delay=".3s" data-wow-offset="100"><a href="#"><img src="img/pic6.jpg" alt="" width="104" /></a></div>
+              <div class="col partner-item wow fadeIn" data-wow-delay=".4s" data-wow-offset="100"><a href="#"><img src="img/pic7.jpg" alt="" width="125" /></a></div>
+              <div class="col partner-item wow fadeIn" data-wow-delay=".5s" data-wow-offset="100"><a href="#"><img src="img/pic8.jpg" alt="" width="150" /></a></div>
             </div>
         </div>
-        <!-- END REVOLUTION SLIDER -->
-        
-    </div>
-    
-    <div class="section back-white" id="work">
-        <div class="section padding-top">
-            <div class="container">
-                <div class="twelve columns">
-                    <div class="title-text left">
-                        <p>I do<span>magic</span></p>
-                        <h3>I create successful, innovative digital products from the initial concept through full product launch.</h3>
-                    </div>
-                </div>
+      </div>
+
+
+      <div class="section section-last text-center editorials">
+        <div class="container">
+          <div class="wow fadeInUp" data-wow-duration=".6s" data-wow-offset="450">
+            <h3 class="section-item-title">Editorials</h3>
+            <div class="editorials-descr text-grey">Check out our last articles, tutorials and awesome tips</div>
+          </div>
+
+          <div class="article-list row wow fadeInUp" data-wow-duration=".5s" data-wow-offset="450">
+            <div class="col-md-4">
+              <div class="article-item">
+                <div class="article-item-photo zooming wow fadeInDown" data-wow-delay=".6s" data-wow-offset="450"><a href="single-post-with-sidebar.html"><img src="img/pic9.jpg" alt="" class="img-fluid" /></a></div>
+                <div class="article-item-category"><a href="news-grid.html">inspiration</a></div>
+                <div class="article-item-title"><a href="single-post-with-sidebar.html">How to Create a Vintage Magazine Effect in a Sergey Prokudin-Gorsky Style 2018 professional</a></div>
+                <div class="article-item-date text-grey">December 25, 2018</div>
+              </div>
             </div>
-            <div class="section">
-                
-                <div class="clear"></div>
-
-                <div class="portfolio"></div>
-
-                <div class="expander-wrap relative">
-                    <div id="expander-wrap">
-                        <p class="cls-btn"><a class="close"></a></p>
-                        <div class="expander-inner"></div>
-                    </div>
-                </div>
-                
-                <div class="clear"></div>
-                
-                <div class="container">
-                    <div class="twelve columns">
-                        <div id="portfolio-filter">
-                            <ul id="filter">
-                                <li><a href="#" class="current" data-filter="*" title="">all</a></li>
-                                <li class="tipped" data-title="2 projects" data-tipper-options='{"direction":"top","follow":"true"}'><a href="#" data-filter=".branding" title="">branding</a></li>
-                                <li class="tipped" data-title="2 projects" data-tipper-options='{"direction":"top","follow":"true"}'><a href="#" data-filter=".photo" title="">photo</a></li>
-                                <li class="tipped" data-title="2 projects" data-tipper-options='{"direction":"top","follow":"true"}'><a href="#" data-filter=".motion" title="">motion</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>	
-                
-                <div class="clear"></div>				
-                    
-                <div id="projects-grid">
-                    <a class="expander tipped" href="project1.html" data-title="ajax expander" data-tipper-options='{"direction":"top","follow":"true"}'>
-                        <div class="portfolio-box-1 branding">
-                            <div class="mask"></div>
-                            <h3><span>branding</span><br>project name</h3>
-                            <img src="images/portfolio/1.jpg" alt="">
-                        </div>
-                    </a>
-                    <a class="expander tipped" href="project2.html" data-title="ajax expander" data-tipper-options='{"direction":"top","follow":"true"}'>
-                        <div class="portfolio-box-1 photo">
-                            <div class="mask"></div>
-                            <h3><span>photo</span><br>project name</h3>
-                            <img src="images/portfolio/2.jpg" alt="">
-                        </div>
-                    </a>
-                    <a class="expander tipped" href="project3.html" data-title="ajax expander" data-tipper-options='{"direction":"top","follow":"true"}'>
-                        <div class="portfolio-box-1 motion">
-                            <div class="mask"></div>
-                            <h3><span>motion</span><br>project name</h3>
-                            <img src="images/portfolio/3.jpg" alt="">
-                        </div>
-                    </a>
-                    <a class="expander tipped" href="project4.html" data-title="ajax expander" data-tipper-options='{"direction":"top","follow":"true"}'>
-                        <div class="portfolio-box-1 branding">
-                            <div class="mask"></div>
-                            <h3><span>branding</span><br>project name</h3>
-                            <img src="images/portfolio/4.jpg" alt="">
-                        </div>
-                    </a>
-                    <a class="expander tipped" href="project1.html" data-title="ajax expander" data-tipper-options='{"direction":"top","follow":"true"}'>
-                        <div class="portfolio-box-1 photo">
-                            <div class="mask"></div>
-                            <h3><span>photo</span><br>project name</h3>
-                            <img src="images/portfolio/5.jpg" alt="">
-                        </div>
-                    </a>
-                    <a class="expander tipped" href="project2.html" data-title="ajax expander" data-tipper-options='{"direction":"top","follow":"true"}'>
-                        <div class="portfolio-box-1 motion">
-                            <div class="mask"></div>
-                            <h3><span>motion</span><br>project name</h3>
-                            <img src="images/portfolio/6.jpg" alt="">
-                        </div>
-                    </a>
-                </div>
-            </div>					
-        </div>			
-    </div>
-
-    
-    <div class="section back-white" id="services">
-        <div class="section padding-top-bottom">
-            <div class="container">
-                <div class="twelve columns">
-                    <div class="title-text left">
-                        <p>what<span>I do</span></p>
-                        <h3>I help companies and startups from all over the world materialize their ideas into great projects.</h3>
-                    </div>
-                </div>
-                <div class="twelve columns" >
-                    <div class="about-wrap">
-                        <div class="about-icon">
-                            <svg version="1.1" id="svg-icon-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48px" height="48px" x="0px" y="0px"
-                                 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
-                                <g>
-                                    <rect fill="none" stroke="#000000" stroke-width="2" x="2" y="6" class="st0" width="44" height="28"/>
-                                    <path fill="none" stroke="#000000" stroke-width="2" class="st0" d="M27.2,34.5c0,1.8,1.1,7.5,5.3,7.5h-16c4.3,0,5.3-5.7,5.3-7.4"/>
-                                    <polyline fill="none" stroke="#000000" stroke-width="2" class="st0" points="9.5,20.6 15.7,16.1 26.5,18.3 39.5,10.6 	"/>
-                                    <rect fill="none" stroke="#000000" stroke-width="2" x="10" y="26" class="st0" width="4" height="4"/>
-                                    <rect fill="none" stroke="#000000" stroke-width="2" x="18" y="22" class="st0" width="4" height="8"/>
-                                    <rect fill="none" stroke="#000000" stroke-width="2" x="26" y="24" class="st0" width="4" height="6"/>
-                                    <rect fill="none" stroke="#000000" stroke-width="2" x="34" y="18" class="st0" width="4" height="12"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <h5 data-scroll-reveal="enter bottom move 100px over 1s after 0.3s">branding.</h5>
-                        <p data-scroll-reveal="enter bottom move 100px over 1s after 0.3s">Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p>
-                    </div>
-                </div>
-                <div class="twelve columns" >
-                    <div class="about-wrap">
-                        <div class="about-icon">
-                            <svg version="1.1" id="svg-icon-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                  width="48px" height="48px"viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
-                            <g>
-                                <line fill="none" stroke="#0f0f0f" stroke-width="2" class="st0" x1="36" y1="18" x2="46" y2="18"/>
-                                <line fill="none" stroke="#0f0f0f" stroke-width="2" class="st0" x1="12" y1="24" x2="36" y2="24"/>
-                                <line fill="none" stroke="#0f0f0f" stroke-width="2" class="st0" x1="12" y1="30" x2="22" y2="30"/>
-                                <line fill="none" stroke="#0f0f0f" stroke-width="2" class="st0" x1="12" y1="36" x2="32" y2="36"/>
-                                <line fill="none" stroke="#0f0f0f" stroke-width="2" class="st1" x1="12" y1="18" x2="14" y2="18"/>
-                                <line fill="none" stroke="#0f0f0f" stroke-width="2" class="st1" x1="18" y1="18" x2="20" y2="18"/>
-                                <line fill="none" stroke="#0f0f0f" stroke-width="2" class="st1" x1="24" y1="18" x2="26" y2="18"/>
-                                <line fill="none" stroke="#0f0f0f" stroke-width="2" class="st1" x1="30" y1="18" x2="32" y2="18"/>
-                                <polyline fill="none" stroke="#0f0f0f" stroke-width="2" class="st0" points="2.3,24.4 7.1,17.4 2.3,10.4 	"/>
-                            </g>
-                            </svg>
-                        </div>
-                        <h5 data-scroll-reveal="enter bottom move 100px over 1s after 0.3s">development.</h5>
-                        <p data-scroll-reveal="enter bottom move 100px over 1s after 0.3s">Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p>
-                    </div>
-                </div>
-                <div class="twelve columns" >
-                    <div class="about-wrap">
-                        <div class="about-icon">
-                            <svg version="1.1" id="svg-icon-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                             width="48px" height="48px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
-                        <g id="XMLID_2_">
-                            <g id="XMLID_4_">
-                                <g id="XMLID_9_">
-                                    <path fill="none" stroke="#0f0f0f" stroke-width="2" id="XMLID_12_" class="st0" d="M47.1,42.4c0,0.9-0.7,1.6-1.6,1.6h-8.9c-0.9,0-1.6-0.7-1.6-1.6V21.6c0-0.9,0.7-1.6,1.6-1.6
-                                        h8.9c0.9,0,1.6,0.7,1.6,1.6V42.4z"/>
-                                    <line fill="none" stroke="#0f0f0f" stroke-width="2" id="XMLID_11_" class="st0" x1="36.2" y1="24" x2="46.2" y2="24"/>
-                                    <line fill="none" stroke="#0f0f0f" stroke-width="2" id="XMLID_10_" class="st0" x1="35.9" y1="40" x2="45.9" y2="40"/>
-                                </g>
-                                <path fill="none" stroke="#0f0f0f" stroke-width="2" id="XMLID_8_" class="st0" d="M35.1,36H4c-1.4,0-2.9-1.5-2.9-2.9V6.2C1.1,4.8,2.6,4,4,4h40.9c1.4,0,2.3,0.8,2.3,2.2V19"/>
-                                <line fill="none" stroke="#0f0f0f" stroke-width="2" id="XMLID_7_" class="st0" x1="2.1" y1="8" x2="46.1" y2="8"/>
-                                <line fill="none" stroke="#0f0f0f" stroke-width="2" id="XMLID_6_" class="st0" x1="2.1" y1="30" x2="35.1" y2="30"/>
-                                <polygon fill="none" stroke="#0f0f0f" stroke-width="2" id="XMLID_5_" class="st0" points="30.2,44 18.3,44 20,36 28.5,36 		"/>
-                            </g>
-                            <line fill="none" stroke="#0f0f0f" stroke-width="2" id="XMLID_3_" class="st0" x1="16.1" y1="44" x2="32.1" y2="44"/>
-                        </g>
-                        </svg>
-                        </div>
-                        <h5 data-scroll-reveal="enter bottom move 100px over 1s after 0.3s">web design.</h5>
-                        <p data-scroll-reveal="enter bottom move 100px over 1s after 0.3s">Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p>
-                    </div>
-                </div>
+            <div class="col-md-4">
+              <div class="article-item">
+                <div class="article-item-photo zooming wow fadeInDown" data-wow-delay=".8s" data-wow-offset="450"><a href="single-post-with-sidebar.html"><img src="img/pic10.jpg" alt="" class="img-fluid" /></a></div>
+                <div class="article-item-category"><a href="news-masonry.html">Product</a></div>
+                <div class="article-item-title"><a href="single-post-no-sidebar.html">LEWIS become 1st winner at CSS Winner with Unero project in 2018.</a></div>
+                <div class="article-item-date text-grey">December 6, 2018</div>
+              </div>
             </div>
-        </div>	
-    </div>
-    
-
-    <div class="section full-height" id="quote">
-        <div class="parallax-6"></div>	
-        <div class="page-center-text">
-            <div class="container">
-                <div class="twelve columns" data-scroll-reveal="enter bottom move 100px over 1s after 0.3s">
-                    <div id="owl-sep-1" class="owl-carousel owl-theme">						 
-                        <div class="item">	
-                            <div class="quote">	
-                                <h4>"Design must reflect the practical and aesthetic in business but above all... good design must primarily serve people."</h4>
-                            </div>											
-                        </div>											
-                        <div class="item">					
-                            <div class="quote">
-                                <h4>"Design is a funny word. Some people think design means how it looks. But of course, if you dig deeper, it's really how it works."</h4>
-                            </div>									
-                        </div>											
-                        <div class="item">				
-                            <div class="quote">
-                                <h4>"Space and light and order. Those are the things that men need just as much as they need bread or a place to sleep."</h4>
-                            </div>										
-                        </div>									 
-                    </div>
-                </div>
-            </div>	
+            <div class="col-md-4">
+              <div class="article-item">
+                <div class="article-item-photo zooming wow fadeInDown" data-wow-delay="1s" data-wow-offset="450"><a href="single-post-with-sidebar.html"><img src="img/pic11.jpg" alt="" class="img-fluid" /></a></div>
+                <div class="article-item-category"><a href="news-with-sidebar.html">Tips & tricks</a></div>
+                <div class="article-item-title"><a href="single-post-with-sidebar.html">How to choose image stock photos fit with your project. Color, blending, restock, etc.</a></div>
+                <div class="article-item-date text-grey">October 12, 2018</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="promo-zoom-footer"><div class="inside"><img src="img/bg-promo-zoom-footer.jpg" alt="" class="img-fluid" /></div></div>
+
     </div>
-    
-    
-    <div class="section back-black padding-top-bottom-small">
-            <div class="container z-bigger">
-                <div class="twelve columns">
-                    <div id="owl-logos" class="owl-carousel owl-theme">											 
-                        <div class="item">
-                            <img  src="images/logos/white1.png" alt="" />
-                        </div>											
-                        <div class="item">
-                            <img  src="images/logos/white2.png" alt="" />
-                        </div>											
-                        <div class="item"> 
-                            <img  src="images/logos/white3.png" alt="" />
-                        </div>											 
-                        <div class="item">
-                            <img  src="images/logos/white4.png" alt="" />
-                        </div>										
-                        <div class="item">
-                            <img  src="images/logos/white5.png" alt="" />
-                        </div>											
-                        <div class="item"> 
-                            <img  src="images/logos/white6.png" alt="" />
-                        </div>													 
-                        <div class="item">
-                            <img  src="images/logos/white1.png" alt="" />
-                        </div>											
-                        <div class="item">
-                            <img  src="images/logos/white2.png" alt="" />
-                        </div>											
-                        <div class="item"> 
-                            <img  src="images/logos/white3.png" alt="" />
-                        </div>											 
-                        <div class="item">
-                            <img  src="images/logos/white4.png" alt="" />
-                        </div>										
-                        <div class="item">
-                            <img  src="images/logos/white5.png" alt="" />
-                        </div>											
-                        <div class="item"> 
-                            <img  src="images/logos/white6.png" alt="" />
-                        </div>								
-                    </div>	
-                </div>
-            </div>	
-    </div>
-    
-    
-    <div class="section back-white" id="contact">
-        <div class="contact-full-wrap">
-            <div class="contact-half-wrap">
-                <div class="parallax-5"></div>	
-                <div class="page-center-text">
-                    <div class="con-soc-links">
-                        <a href="#" data-scroll-reveal="enter bottom move 100px over 1s after 0.3s"><span>twitter</span></a>
-                        <div class="clear"></div>
-                        <a href="#" data-scroll-reveal="enter bottom move 100px over 1s after 0.4s"><span>behance</span></a>
-                        <div class="clear"></div>
-                        <a href="#" data-scroll-reveal="enter bottom move 100px over 1s after 0.5s"><span>dribbble</span></a>
-                        <div class="clear"></div>
-                        <a href="#" data-scroll-reveal="enter bottom move 100px over 1s after 0.6s"><span>talos@talos.com</span></a>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+
+    <footer id="footer" class="footer">
+      <div class="footer-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mt-1 mb-5">
+              <h3 class="section-item-title">office</h3>
+              <div class="contact-item">166 Main Street, Beverly Hills, CA, 90210<br /> United States</div>
+              <div class="contact-item"><a href="mailto:hello@lewisstudio.co">hello@lewisstudio.co</a></div>
+              <div class="contact-item"><a href="tel:+00853462188" class="phone-link">+0085 346 2188</a></div>
+              <ul class="social">
+                <li><a href="#"><i class="socicon-twitter"></i></a></li>
+                <li><a href="#"><i class="socicon-facebook"></i></a></li>
+                <li><a href="#"><i class="socicon-googleplus"></i></a></li>
+                <li><a href="#"><i class="socicon-behance"></i></a></li>
+                <li><a href="#"><i class="socicon-instagram"></i></a></li>
+              </ul>
             </div>
-            <div class="contact-half-wrap">
-                <div id="cd-google-map">
-                    <div id="google-container"></div>
-                    <div id="cd-zoom-in"></div>
-                    <div id="cd-zoom-out"></div>
-                </div>
+            <div class="col-md-4 mb-5">
+              <div class="rounded-logo rounded-logo-lg">
+                <svg viewBox="0 0 200 200">
+                  <path id="textPath2" d="M 85,0 A 85,85 0 0 1 -85,0 A 85,85 0 0 1 85,0" transform="translate(100,100)" fill="none" stroke-width="0"/>
+                  <g font-size="20px">
+                    <text text-anchor="start">
+                      <textPath xlink:href="#textPath2" startOffset="0%">&bull; &nbsp;  lewis  portfolio &nbsp; &bull; &nbsp; digital  studio</textPath>
+                    </text>
+                  </g>
+                </svg>
+                <div class="logo">LW</div>
+              </div>
             </div>
-        </div>	
-    </div>
-    
+            <div class="col-md-4 mt-1 mb-5 text-right">
+              <h3 class="section-item-title">Twitter</h3>
+              <div class="twitter-item">
+                Looking for aa Creative PSD Template?
+                <br />
+                It here: <a href="https://tf.net/OAWS890a" target="_blank">https://tf.net/OAWS890a</a>
+                <div class="twitter-date"><i class="socicon-twitter"></i> 2 days ago</div>
+              </div>
+              <div class="twitter-item">
+                You need an image stock
+                <br />
+                It here: <a href="https://uph.com/567AW1" target="_blank">https://uph.com/567AW1</a>
+                <div class="twitter-date"><i class="socicon-twitter"></i> 4 days ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="site-info">
+        <div class="container">
+          <div class="copyright">&copy; 2019 <strong>LEWIS</strong>. All Rights Reserved. design by <strong>Logancee</strong></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
 @endsection

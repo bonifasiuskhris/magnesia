@@ -17,32 +17,26 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
 	
-    {{-- Themes --}}
-    <link rel="stylesheet" href="{{asset('themes/css/base.css')}}"/>
-	<link rel="stylesheet" href="{{asset('themes/css/skeleton.css')}}"/>
-	<link rel="stylesheet" href="{{asset('themes/css/layout.css')}}"/>
-	<link rel="stylesheet" href="{{asset('themes/css/color.css')}}"/>
-	<link rel="stylesheet" href="{{asset('themes/css/font-awesome.css')}}" />
-	<link rel="stylesheet" href="{{asset('themes/css/et-line.css')}}"/>
-	<link rel="stylesheet" href="{{asset('themes/css/owl.carousel.css')}}"/>
-	<link rel="stylesheet" href="{{asset('themes/css/owl.transitions.css')}}"/>
-	<link rel="stylesheet" href="{{asset('themes/css/retina.css')}}"/>
-	<link rel="stylesheet" href="{{asset('themes/css/settings.css')}}"/>
-	<link rel="stylesheet" href="{{asset('themes/css/layers.css')}}"/>
-    <link rel="stylesheet" href="{{asset('themes/css/navigation.css')}}"/>
+    {{-- Themes Plugins --}}
+    <link rel="stylesheet" href="{{asset('themes/css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('themes/css/animsition.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('themes/css/owl.carousel.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('themes/css/owl.theme.default.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('themes/css/socicon.css')}}"/>
+    <link rel="stylesheet" href="{{asset('themes/css/ionicons.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('themes/css/animate.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('themes/css/jquery.fancybox.min.css')}}"/>
+    
+    {{-- Styles Main Themes --}}
+    <link rel="stylesheet" href="{{asset('themes/css/style.css')}}"/>
 
-    <script type="text/javascript" src="{{asset('themes/js/modernizr.custom.js')}}"></script> 
-        
     {{-- Styles TheSaaS --}}
     {{-- <link href="{{ asset('css/page.css') }}" rel="stylesheet" type="text/css"> --}}
 
     @yield('content_head')
 </head>
 
-<body class="royal_preloader">
-
-	<div id="royal_preloader"></div>
-	<div id="remove-class" class="preload">
+<body class="home-zoom fixed-footer">
 
     @include('layout._nav')
   
@@ -50,30 +44,23 @@
 
     @include('layout._footer')
 
-	</div>
-   
     {{-- Themes Script --}}
-    <script type="text/javascript" src="{{asset('themes/js/jquery-2.1.1.js')}}"></script>	
-    <script type="text/javascript" src="{{asset('themes/js/royal_preloader.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/plugins.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/masonry.js')}}"></script> 
-    <script type="text/javascript" src="{{asset('themes/js/isotope.js')}}"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvpnlHRidMIU374bKM5-sx8ruc01OvDjI"></script>
-
-    {{-- Revolution JS Files --}}
-    <script type="text/javascript" src="{{asset('themes/js/jquery.themepunch.tools.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/jquery.themepunch.revolution.min.js')}}"></script> 
-    {{-- Slider Revolution 5.0 Ext --}}
-    <script type="text/javascript" src="{{asset('themes/js/extensions/revolution.extension.actions.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/extensions/revolution.extension.carousel.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/extensions/revolution.extension.migration.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/extensions/revolution.extension.parallax.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/extensions/revolution.extension.video.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('themes/js/custom.js')}}"></script>    
+    <script type="text/javascript" src="{{asset('themes/js/jquery.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/smoothscroll.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/popper.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/bootstrap.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/animsition.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/owl.carousel.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/wow.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/jquery.pagepiling.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/isotope.pkgd.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/jquery.fancybox.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/TweenMax.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/ScrollMagic.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/animation.gsap.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/jquery.viewport.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/jquery.countdown.min.js')}}"></script>	
+    <script type="text/javascript" src="{{asset('themes/js/script.js')}}"></script>	
 
     {{-- Script TheSaaS --}}
     {{-- <script src="{{ asset('js/page.js') }}"></script> --}}
