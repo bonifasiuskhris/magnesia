@@ -1,6 +1,34 @@
+<nav id="menu-wrap" class="menu-back cbp-af-header">
+    <div class="container">
+        <div class="twelve columns">
+            <div class="logo"></div>
+            <ul class="slimmenu">
+                <li>
+                    <a href="#home">intro</a>
+                </li>
+                <li>
+                    <a href="#work">portfolio</a>
+                </li>
+                <li> 
+                    <a href="#services">what I do</a>
+                </li>
+                <li> 
+                    <a href="#quote">what they say</a>
+                </li>
+                <li>
+                    <a href="#contact">hello</a>
+                </li>
+                <li>
+                    <a href="../index.html">demos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <!-- Navbar -->
 
-<nav class="navbar navbar-expand-lg bg-white navbar-dark bb-2 py-2" style="top:0px;">
+{{-- <nav class="navbar navbar-expand-lg bg-white navbar-dark bb-2 py-2" style="top:0px;">
     <div class="container">
         <div class="navbar-left">
             <button class="navbar-toggler" type="button">&#9776;</button>
@@ -20,5 +48,5 @@
             
         </section>
     </div>
-</nav>
+</nav> --}}
 <!-- /.navbar -->
