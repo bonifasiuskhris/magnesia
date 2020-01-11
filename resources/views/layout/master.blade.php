@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('themes/css/ionicons.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('themes/css/animate.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('themes/css/jquery.fancybox.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('themes/css/jquery.pagepiling.css')}}"/>
     
     {{-- Styles Main Themes --}}
     <link rel="stylesheet" href="{{asset('themes/css/style.css')}}"/>
@@ -36,15 +37,21 @@
     @yield('content_head')
 </head>
 
-<body class="home-zoom fixed-footer">
+<body class="theme-magnesia dark-horizontal">
+    <div class="animsition">
+      <div class="wrapper">
+        
+            @include('layout._nav')
 
-    @include('layout._nav')
-  
-        @yield('content')
+                @yield('content')
 
-    @include('layout._footer')
+            @include('layout._footer')
+
+      </div>
+    </div>
 
     {{-- Themes Script --}}
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="{{asset('themes/js/jquery.min.js')}}"></script>	
     <script type="text/javascript" src="{{asset('themes/js/smoothscroll.js')}}"></script>	
     <script type="text/javascript" src="{{asset('themes/js/popper.min.js')}}"></script>	
@@ -61,7 +68,7 @@
     <script type="text/javascript" src="{{asset('themes/js/jquery.viewport.js')}}"></script>	
     <script type="text/javascript" src="{{asset('themes/js/jquery.countdown.min.js')}}"></script>	
     <script type="text/javascript" src="{{asset('themes/js/script.js')}}"></script>	
-
+    
     {{-- Script TheSaaS --}}
     {{-- <script src="{{ asset('js/page.js') }}"></script> --}}
     

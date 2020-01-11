@@ -22,7 +22,7 @@
 
       4.1 Home Horizontal Navs
       4.2 Home Horizontal Setting
-      4.3 Home Horizontal Animation
+      4.3 Home Horizontal Anima{{asset('themes/js/jquery.min.js')}}tion
       4.4 Home Horizontal Dark Settings
 
 
@@ -56,8 +56,6 @@
 -------------------------------------------------------------------------------*/
 
 
-/* 0.1 Custom Fonts */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap');
 /* 1.1 General */
 
 @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i');
@@ -338,13 +336,9 @@ html > body .fs60 {
   }
 }
 
-.font-magnesia {
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* .font-custom {
+.font-custom {
   font-family: 'Butler', Serif;
-} */
+}
 
 .font-teko {
   font-family: 'Teko', sans-serif;
@@ -895,25 +889,6 @@ input:focus {
   float: left;
   margin-right: 1rem;
   white-space: nowrap;
-}
-
-.brand,
-.brand-magnesia {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.brand-magnesia {
-  background-image: url('../../assets/brand/logo-text-dark.svg') ;
-  background-repeat: no-repeat;
-  width: 95px;
-  height: 50px;
-}
-.dark-horizontal .brand-magnesia {
-  background-image: url('../../assets/brand/logo-text-white.svg') ;
-  background-repeat: no-repeat;
-  width: 95px;
-  height: 50px;
 }
 
 .brand a {
@@ -3045,8 +3020,7 @@ a:hover .zooming img {
   position: absolute;
   left: 0;
   top: 0;
-  background: #e4b651;
-  /* background: #ff3600; */
+  background: #ff3600;
 }
 
 .horizontal-nav li.active:before {
@@ -3200,13 +3174,9 @@ a:hover .zooming img {
 }
 
 .home-horizontal .slide1 .slide-bg > .inside {
-  background-image: url("../../assets/img/slide1.png");
-}
-/* 
-.home-horizontal .slide1 .slide-bg > .inside {
   background-image: url("../img/bg-horizontal1_.jpg");
 }
- */
+
 .home-horizontal .slide3 .slide-bg > .inside {
   background-image: url("../img/bg-horizontal3.jpg");
 }
@@ -3426,8 +3396,7 @@ a.btn-play i {
   left: -1px;
   right: -1px;
   bottom: -1px;
-  background: #e4b651;
-  /* background: #ff3600; */
+  background: #ff3600;
   transition: width .3s ease-in-out;
 }
 
@@ -7914,30 +7883,6 @@ a.phone-link {
   border-color: #ff3600;
 }
 
-/* magnesia themes */
-.theme-magnesia .navbar-nav a:before,
-.theme-magnesia .menu-main a:before,
-.theme-magnesia .menu-lang-item.active,
-.theme-magnesia .menu-lang-item:hover,
-.theme-magnesia .nav-toggle-btn:hover,
-.theme-magnesia .text-primary,
-.theme-magnesia .social:not(.social-rounded) a:hover,
-.theme-magnesia .brand-name {
-  color: #e4b651 !important;
-}
-
-.theme-magnesia .nav-toggle-btn:hover .stick,
-.theme-magnesia .social-rounded a:hover,
-.theme-magnesia .btn-primary,
-.theme-magnesia .btn-play:hover {
-  background-color: #e4b651;
-}
-
-.theme-magnesia .social-rounded a:hover,
-.theme-magnesia .btn-primary,
-.theme-magnesia .btn-play {
-  border-color: #e4b651;
-}
 
 .theme-yellow .navbar-nav a:before,
 .theme-yellow .menu-main a:before,
