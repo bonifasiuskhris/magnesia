@@ -89,10 +89,10 @@
     <div class="container">
         <ul id="menu">
           <li data-menuanchor="Home" class="active"></li>
-          <li data-menuanchor="Services"></li>
-          <li data-menuanchor="Projects"></li>
-          <li data-menuanchor="Clients"></li>
-          <li data-menuanchor="Contacts"></li>
+          <li data-menuanchor="Service"></li>
+          <li data-menuanchor="Project"></li>
+          <li data-menuanchor="Client"></li>
+          <li data-menuanchor="Contact"></li>
         </ul>
     </div>
     <div class="horizontal-controls">

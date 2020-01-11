@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'Home@index');
+Route::get('/service', 'Service@index');
+Route::get('/portfolio', 'Portfolio@index');
+Route::get('/contact', 'Contact@index');
