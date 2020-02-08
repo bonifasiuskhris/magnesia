@@ -37,7 +37,7 @@
     @yield('content_head')
 </head>
 
-<body class="theme-magnesia dark-horizontal">
+<body class="theme-magnesia">
     <div class="animsition">
       <div class="wrapper">
         
