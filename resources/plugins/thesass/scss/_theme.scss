@@ -7,6 +7,37 @@
 // Google fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Dosis:200,400,500,600');
 
+@font-face {
+    font-family: 'proxima_novablack';
+    src: url('/fonts/proximanova-black-webfont.woff2') format('woff2'),
+         url('/fonts/proximanova-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_novabold';
+    src: url('/fonts/proximanova-bold-webfont.woff2') format('woff2'),
+         url('/fonts/proximanova-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_novablack_italic';
+    src: url('/fonts/proximanova-blackit-webfont.woff2') format('woff2'),
+         url('/fonts/proximanova-blackit-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_novabold_italic';
+    src: url('/fonts/proximanova-boldit-webfont.woff2') format('woff2'),
+         url('/fonts/proximanova-boldit-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 //----------------------------------------
 // Color system
@@ -65,7 +96,7 @@ $color-subtitle:                  $color-text-light;
 //----------------------------------------
 $fonts-dir:                       '../fonts/';
 $font-family-base:                "Open Sans", sans-serif;
-$font-family-title:               Dosis, sans-serif;
+$font-family-title:               "proxima_novablack", sans-serif;
 
 $font-size-base:                  0.9375rem;
 

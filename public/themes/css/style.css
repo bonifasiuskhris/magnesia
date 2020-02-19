@@ -58,7 +58,7 @@
 
 /* 0.1 Custom Fonts */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
 /* 1.1 General */
 
 @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i');
@@ -68,6 +68,31 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700');
 
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+@font-face {
+  font-family: "proxima_novablack";
+  src: url("/fonts/proximanova-black-webfont.woff2") format("woff2"), url("/fonts/proximanova-black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "proxima_novabold";
+  src: url("/fonts/proximanova-bold-webfont.woff2") format("woff2"), url("/fonts/proximanova-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "proxima_novablack_italic";
+  src: url("/fonts/proximanova-blackit-webfont.woff2") format("woff2"), url("/fonts/proximanova-blackit-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "proxima_novabold_italic";
+  src: url("/fonts/proximanova-boldit-webfont.woff2") format("woff2"), url("/fonts/proximanova-boldit-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
     font-family: 'Butler';
@@ -117,7 +142,7 @@ html {
 
 body {
   /* font-family: 'Karla', sans-serif; */
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'proxima_novablack', sans-serif;
   color: #353332;
   /* color: #000000; */
 }
@@ -217,13 +242,13 @@ html > body .underline:hover {
 }
 .fw-bold {
   font-weight: 700 !important;
-} 
+}
 .fw-bolder {
   font-weight: 800 !important;
-} 
+}
 .fw-boldest {
   font-weight: 900 !important;
-} 
+}
 
 h2,
 .h2,
@@ -823,10 +848,10 @@ input:focus {
 }
 
 @keyframes sk-bounce {
-  0%, 100% { 
+  0%, 100% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 50% { 
+  } 50% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
@@ -1126,7 +1151,7 @@ input:focus {
 }
 
 .body-menu-close .stick-1 {
-  width: 3px; 
+  width: 3px;
   animation: stick-1-close .85s ease-out forwards;
 }
 
@@ -1936,7 +1961,7 @@ a.service-item {
   position: absolute;
   z-index: 10;
   width: 200%;
-  background: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1) 50%, rgba(255,255,255,1)); 
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1) 50%, rgba(255,255,255,1));
   background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 50%, rgba(255,255,255,1));
   height: 100%;
   top: 0;
@@ -2843,7 +2868,7 @@ a.article-item {
   bottom: 0;
   z-index: 150;
   opacity: .6;
-  background: -webkit-linear-gradient(bottom, rgba(0,0,0,.75), rgba(0,0,0,0) 70%); 
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,.75), rgba(0,0,0,0) 70%);
   background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0) 70%);
   transition: all .3s ease-in-out;
 }
@@ -3229,7 +3254,7 @@ a:hover .zooming img {
 .home-horizontal .slide1 .slide-bg > .inside {
   background-image: url("../../assets/img/slide1.png");
 }
-/* 
+/*
 .home-horizontal .slide1 .slide-bg > .inside {
   background-image: url("../img/bg-horizontal1_.jpg");
 }
@@ -3411,7 +3436,7 @@ a.btn-play i {
 }
 
 .media-title {
-  margin-top: .55555556vmin; 
+  margin-top: .55555556vmin;
   margin-bottom: 3rem;
 }
 
@@ -5067,7 +5092,7 @@ a.minimal-item:hover {
 .project-carousel-3d .owl-item .project-carousel-photo,
 .project-carousel-3d .owl-item .project-carousel-date,
 .project-carousel-3d .owl-item .project-carousel-detail {
-  transition: all .4s ease-in-out; 
+  transition: all .4s ease-in-out;
   transform: translate(0rem, 0%);
 }
 
@@ -7890,7 +7915,7 @@ a.phone-link {
 .theme-orange .text-primary,
 .theme-orange a.text-primary:hover,
 .theme-orange .social:not(.social-rounded) a:hover,
-.theme-orange .article-item-category, 
+.theme-orange .article-item-category,
 .theme-orange .article-item-category a,
 .theme-orange .pager a:hover,
 .theme-orange .article-item-info a:hover,
